@@ -67,7 +67,7 @@
 					  <select name="option" id="accountNumber" required>
                         <option value="" selected disabled hidden>Choose here</option>
                         <c:forEach items="${bankAccountList}" var="item">
-						<option value="${item.accountNumber}"> - ${item.accountNumber}</option>
+						<option value="${item.accountNumber}">${item.user.firstName} ${item.user.lastName} - ${item.accountNumber}</option>
 						</c:forEach>
 					  </select>
                     </div>
