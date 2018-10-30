@@ -10,4 +10,7 @@ import com.springboot.entities.Transaction;
 @Repository
 public interface TransactionRepository extends CrudRepository<Transaction, Integer>{
 	public List<Transaction> findByAccountNumberContaining(String accountNumber);
+	public List<Transaction> findByFirstNameContainingOrLastNameContaining(String firstName, String lastName);
+	public List<Transaction> findByAccountNumberContainingAndFirstNameContainingOrLastNameContaining(
+			String accountNumber, String firstName, String lastName);
 }

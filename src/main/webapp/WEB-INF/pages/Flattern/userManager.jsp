@@ -245,7 +245,7 @@
             <div class="widget">
               <h5 class="widgetheading">Get in touch with us</h5>
               <address>
-								<strong>Bank</strong><br>
+								<strong>Alliance Bank</strong><br>
 								 Jamestown Subdivision San Roque, Talisay City, Cebu<br>
 								 6045 Philippines
 			  </address>

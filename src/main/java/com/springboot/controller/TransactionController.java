@@ -54,6 +54,9 @@ public class TransactionController {
 		
 		AccountManager account = accountManagerService.getAccountByAccountNumber(accountNumber);
 		
+		/* TRANSIENT */
+		account.setUser(userManagerService.getUserNameById(account.getUserId()));
+		
 //		if(account == null) {
 //			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
 //			
@@ -93,7 +96,7 @@ public class TransactionController {
 		   //Update account information
 		   accountManagerService.updateAccount(account);
 
-		   transactionService.withdrawTransaction(accountNumber, amount, account, previousBalance, newBalance);
+		   transactionService.withdrawTransaction(amount, account, previousBalance, newBalance);
 		}
 		
 		map.addAttribute("alert","onload=\"alert('Withdrawal successful!')\"");
@@ -122,6 +125,9 @@ public class TransactionController {
 		
 		AccountManager account = accountManagerService.getAccountByAccountNumber(accountNumber);
 		
+		/* TRANSIENT */
+		account.setUser(userManagerService.getUserNameById(account.getUserId()));
+		
 //		if(account == null) {
 //			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
 //			
@@ -143,7 +149,7 @@ public class TransactionController {
 		   //Update account information
 		   accountManagerService.updateAccount(account);
 		
-		transactionService.depositTransaction(accountNumber, amount, account, previousBalance, newBalance);
+		transactionService.depositTransaction(amount, account, previousBalance, newBalance);
 		
 		map.addAttribute("alert","onload=\"alert('Deposit successful!')\"");
 		
@@ -163,12 +169,28 @@ public class TransactionController {
 		return "transactions";
 	}
 	
-	@RequestMapping(params = "searchByAccountNumber", value="/transactions", method=RequestMethod.POST)
+	@RequestMapping(params = "buttonSearch", value="/transactions", method=RequestMethod.POST)
 	public String searchByAccountNumber(HttpServletRequest request, ModelMap map) {
 		
-		String accountNumber = request.getParameter("accountNumber");
+		String inputSearch = request.getParameter("inputSearch");
+		String inputSearch1 = request.getParameter("inputSearch1");
 		
-		List<Transaction> transactions = transactionService.searchByAccountNumber(accountNumber);
+		List<Transaction> transactions = null;
+		
+		if(!inputSearch.equals("") && !inputSearch1.equals("")) {
+			transactions = transactionService.searchByAccountNumberAndFirstNameOrLastName(inputSearch,inputSearch1,inputSearch1);
+		}
+		else if(!inputSearch.equals("") && inputSearch1.equals("")) {
+			transactions = transactionService.searchByAccountNumber(inputSearch);
+		}
+		else if(inputSearch.equals("") && !inputSearch1.equals("")) {
+			transactions = transactionService.searchByFirstNameOrLastName(inputSearch1,inputSearch1);
+		}
+		else {
+			transactions = transactionService.getAllTransactions();
+		}
+		
+		
 		map.addAttribute("Transactions", transactions);
 		
 		/* OPTION */

@@ -21,7 +21,7 @@ public class TransactionService {
 		return transactions;
 	} 
 	
-	public void withdrawTransaction(String accountNumber, int amount, AccountManager account, int previousBalance, int newBalance) {
+	public void withdrawTransaction(int amount, AccountManager account, int previousBalance, int newBalance) {
 		   
 		   Transaction newTransaction = new Transaction();
 		   newTransaction.setAccountNumber(account.getAccountNumber());
@@ -30,10 +30,12 @@ public class TransactionService {
 		   newTransaction.setAmount(amount);
 		   newTransaction.setBefore_amount(previousBalance);
 		   newTransaction.setAfter_amount(newBalance);
+		   newTransaction.setFirstName(account.getUser().getFirstName());
+		   newTransaction.setLastName(account.getUser().getLastName());		   
 		   transactionRepository.save(newTransaction);
 	}
 		
-	public void depositTransaction(String accountNumber, int amount, AccountManager account, int previousBalance, int newBalance) {
+	public void depositTransaction(int amount, AccountManager account, int previousBalance, int newBalance) {
 			   
 		   Transaction newTransaction = new Transaction();
 		   newTransaction.setAccountNumber(account.getAccountNumber());
@@ -42,12 +44,26 @@ public class TransactionService {
 		   newTransaction.setAmount(amount);
 		   newTransaction.setBefore_amount(previousBalance);
 		   newTransaction.setAfter_amount(newBalance);
+		   newTransaction.setFirstName(account.getUser().getFirstName());
+		   newTransaction.setLastName(account.getUser().getLastName());
 		   transactionRepository.save(newTransaction);	
 	}
 	
 	public List<Transaction> searchByAccountNumber(String accountNumber) {
 		
 		List<Transaction> transactions = transactionRepository.findByAccountNumberContaining(accountNumber);
+		return transactions;
+	}
+	
+	public List<Transaction> searchByFirstNameOrLastName(String firstName, String lastName) {
+		
+		List<Transaction> transactions = transactionRepository.findByFirstNameContainingOrLastNameContaining(firstName, lastName);
+		return transactions;
+	}
+	
+	public List<Transaction> searchByAccountNumberAndFirstNameOrLastName(String accountNumber, String firstName, String lastName) {
+		
+		List<Transaction> transactions = transactionRepository.findByAccountNumberContainingAndFirstNameContainingOrLastNameContaining(accountNumber,firstName, lastName);
 		return transactions;
 	}
 	

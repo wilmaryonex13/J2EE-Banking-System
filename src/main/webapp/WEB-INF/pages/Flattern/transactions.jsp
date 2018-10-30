@@ -64,10 +64,10 @@
                   <div class="control-group">
                     <label class="control-label" for="accountNumber">Account Number</label>
                     <div class="controls">
-					  <select name="option" id="accountNumber" required>
+					  <select name="option" id="accountNumber" required style="width:300px">
                         <option value="" selected disabled hidden>Choose here</option>
                         <c:forEach items="${bankAccountList}" var="item">
-						<option value="${item.accountNumber}">${item.accountNumber} - ${item.user.firstName} ${item.user.lastName}</option>
+						<option value="${item.accountNumber}">${item.accountNumber} - ${item.user.firstName} ${item.user.lastName} - ${item.balance}</option>
 						</c:forEach>
 					  </select>
                     </div>
@@ -75,7 +75,7 @@
                   <div class="control-group">
                     <label class="control-label" for="inputAmount">Amount</label>
                     <div class="controls">
-                      <input type="number" id="inputAmoung" placeholder="Amount" name="amount" required>
+                      <input type="number" id="inputAmount" placeholder="Amount" name="amount" required>
                     </div>
                   </div>
                   <div class="control-group">
@@ -98,10 +98,10 @@
                   <div class="control-group">
                     <label class="control-label" for="accountNumber">Account Number</label>
                     <div class="controls">
-					  <select name="option" id="accountNumber" required>
+					  <select name="option" id="accountNumber" required style="width:300px">
                         <option value="" selected disabled hidden>Choose here</option>
                         <c:forEach items="${bankAccountList}" var="item">
-						<option value="${item.accountNumber}">${item.accountNumber} - ${item.user.firstName} ${item.user.lastName}</option>
+						<option value="${item.accountNumber}">${item.accountNumber} - ${item.user.firstName} ${item.user.lastName} - ${item.balance}</option>
 						</c:forEach>
 					  </select>
                     </div>
@@ -109,7 +109,7 @@
                   <div class="control-group">
                     <label class="control-label" for="inputAmount">Amount</label>
                     <div class="controls">
-                      <input type="number" id="inputAmoung" placeholder="Amount" name="amount" required>
+                      <input type="number" id="inputAmount" placeholder="Amount" name="amount" required>
                     </div>
                   </div>
                   <div class="control-group">
@@ -173,10 +173,13 @@
       <div class="container">
         <form class="form-search" action="transactions" method="POST">
           <div class="widget" style = "position:relative; left: 32px; ">
-            <input placeholder="Account number" type="text" class="input-medium search-query" name="accountNumber">
+            <input placeholder="Account Number" id="inputSearch" type="text" class="input-medium search-query" name="inputSearch">
             <br>
             <br>
-            <button type="submit" class="btn btn-square btn-theme" name="searchByAccountNumber">Search</button>
+            <input placeholder="Account Name" id="inputSearch1" type="text" class="input-medium search-query" name="inputSearch1">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-square btn-theme" name="buttonSearch">Search</button>
             <br>
             <br>
             <br>
@@ -187,6 +190,9 @@
                 <tr>
                   <th>
                     Account Number
+                  </th>
+                  <th>
+                    Account Name
                   </th>
                   <th>
                     Date/Time
@@ -210,6 +216,7 @@
 					<c:if test = "${transaction.action == 'W'}">
 						<tr class = "warning">
 							<td>${transaction.accountNumber} </td>
+							<td>${transaction.firstName} ${transaction.lastName} </td>
 							<td>${transaction.date}</td>
 							    <c:if test = "${transaction.action == 'W'}">
 									<td>Withdraw</td>	
@@ -225,6 +232,7 @@
      				<c:if test = "${transaction.action == 'D'}">
 						<tr class="success">
 						<td>${transaction.accountNumber} </td>
+						<td>${transaction.firstName} ${transaction.lastName} </td>
 							<td>${transaction.date}</td>
 							    <c:if test = "${transaction.action == 'W'}">
 									<td>Withdraw</td>	
@@ -289,7 +297,7 @@
             <div class="widget">
               <h5 class="widgetheading">Get in touch with us</h5>
               <address>
-								<strong>Bank</strong><br>
+								<strong>Alliance Bank</strong><br>
 								 Jamestown Subdivision San Roque, Talisay City, Cebu<br>
 								 6045 Philippines
 			  </address>
