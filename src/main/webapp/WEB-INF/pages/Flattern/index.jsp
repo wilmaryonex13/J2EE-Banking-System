@@ -66,10 +66,7 @@
                 <nav>
                   <ul class="nav topnav">
                     <li>
-<<<<<<< HEAD
                       <a href="index"><strong>HELLO wala HOME</strong></a>
-=======
->>>>>>> d98b0bbd13158874cd035fbc1dcb2def20927ce7
                     </li>
   					<li>
                       <a href="userManager"><strong>USER MANAGER</strong></a>
