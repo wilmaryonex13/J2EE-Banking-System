@@ -20,6 +20,8 @@ public class Transaction implements Serializable{
 	private int before_amount;
 	private int amount;
 	private int after_amount;
+//	private String firstName;
+//	private String lastName;
 	
 	public int getId() {
 		return id;
@@ -27,11 +29,11 @@ public class Transaction implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getAccount_number() {
+	public String getAccountNumber() {
 		return accountNumber;
 	}
-	public void setAccount_number(String account_number) {
-		this.accountNumber = account_number;
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
 	}
 	public String getDate() {
 		return date;
@@ -63,4 +65,17 @@ public class Transaction implements Serializable{
 	public void setAfter_amount(int after_amount) {
 		this.after_amount = after_amount;
 	}
+//	public String getFirstName() {
+//		return firstName;
+//	}
+//	public void setFirstName(String firstName) {
+//		this.firstName = firstName;
+//	}
+//	public String getLastName() {
+//		return lastName;
+//	}
+//	public void setLastName(String lastName) {
+//		this.lastName = lastName;
+//	}
+	
 }

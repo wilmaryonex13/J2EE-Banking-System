@@ -14,6 +14,7 @@ import com.springboot.entities.Transaction;
 import com.springboot.entities.UserManager;
 import com.springboot.service.AccountManagerService;
 import com.springboot.service.TransactionService;
+import com.springboot.service.UserManagerService;
 
 @Controller
 public class TransactionController {
@@ -24,6 +25,9 @@ public class TransactionController {
 	@Autowired
 	private AccountManagerService accountManagerService;
 	
+	@Autowired
+	private UserManagerService userManagerService;
+	
 	@RequestMapping("/transactions")
 	public String getAllTransactions(ModelMap map){
 		List<Transaction> transactions = transactionService.getAllTransactions();
@@ -31,6 +35,12 @@ public class TransactionController {
 		
 		/* OPTION */
 		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+		
+		/* TRANSIENT */
+		for(AccountManager bankAccount:bankAccountList){
+			bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+		}
+		
 		map.addAttribute("bankAccountList",bankAccountList);
 		
 		return "transactions";
@@ -44,18 +54,18 @@ public class TransactionController {
 		
 		AccountManager account = accountManagerService.getAccountByAccountNumber(accountNumber);
 		
-		if(account == null) {
-			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
-			
-			List<Transaction> transactions = transactionService.getAllTransactions();
-			map.addAttribute("Transactions", transactions);
-			
-			/* OPTION */
-			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
-			map.addAttribute("bankAccountList",bankAccountList);
-			
-			return "transactions";
-		}
+//		if(account == null) {
+//			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
+//			
+//			List<Transaction> transactions = transactionService.getAllTransactions();
+//			map.addAttribute("Transactions", transactions);
+//			
+//			/* OPTION */
+//			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+//			map.addAttribute("bankAccountList",bankAccountList);
+//			
+//			return "transactions";
+//		}
 		
 		//Withdrawal sequence
 		if(account.getBalance() < amount){
@@ -66,6 +76,12 @@ public class TransactionController {
 			
 			/* OPTION */
 			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+			
+			/* TRANSIENT */
+			for(AccountManager bankAccount:bankAccountList){
+				bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+			}
+			
 			map.addAttribute("bankAccountList",bankAccountList);
 			
 			return "transactions";
@@ -89,6 +105,11 @@ public class TransactionController {
 		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
 		map.addAttribute("bankAccountList",bankAccountList);
 		
+		/* TRANSIENT */
+		for(AccountManager bankAccount:bankAccountList){
+			bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+		}
+		
 		return "transactions";
 		
 	}
@@ -101,18 +122,18 @@ public class TransactionController {
 		
 		AccountManager account = accountManagerService.getAccountByAccountNumber(accountNumber);
 		
-		if(account == null) {
-			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
-			
-			List<Transaction> transactions = transactionService.getAllTransactions();
-			map.addAttribute("Transactions", transactions);
-			
-			/* OPTION */
-			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
-			map.addAttribute("bankAccountList",bankAccountList);
-			
-			return "transactions";
-		}
+//		if(account == null) {
+//			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
+//			
+//			List<Transaction> transactions = transactionService.getAllTransactions();
+//			map.addAttribute("Transactions", transactions);
+//			
+//			/* OPTION */
+//			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+//			map.addAttribute("bankAccountList",bankAccountList);
+//			
+//			return "transactions";
+//		}
 			
 		//Deposit sequence
 		   int previousBalance = account.getBalance();
@@ -131,6 +152,12 @@ public class TransactionController {
 		
 		/* OPTION */
 		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+		
+		/* TRANSIENT */
+		for(AccountManager bankAccount:bankAccountList){
+			bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+		}
+		
 		map.addAttribute("bankAccountList",bankAccountList);
 		
 		return "transactions";
@@ -146,6 +173,12 @@ public class TransactionController {
 		
 		/* OPTION */
 		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+		
+		/* TRANSIENT */
+		for(AccountManager bankAccount:bankAccountList){
+			bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+		}
+		
 		map.addAttribute("bankAccountList",bankAccountList);
 		
 		return "/transactions";

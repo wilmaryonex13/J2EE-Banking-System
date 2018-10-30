@@ -67,7 +67,7 @@
 					  <select name="option" id="accountNumber" required>
                         <option value="" selected disabled hidden>Choose here</option>
                         <c:forEach items="${bankAccountList}" var="item">
-						<option value="${item.accountNumber}">${item.accountNumber}</option>
+						<option value="${item.accountNumber}"> - ${item.accountNumber}</option>
 						</c:forEach>
 					  </select>
                     </div>
@@ -209,7 +209,7 @@
 				<c:forEach items = "${Transactions}" var="transaction">
 					<c:if test = "${transaction.action == 'W'}">
 						<tr class = "warning">
-							<td>${transaction.account_number} </td>
+							<td>${transaction.accountNumber} </td>
 							<td>${transaction.date}</td>
 							    <c:if test = "${transaction.action == 'W'}">
 									<td>Withdraw</td>	
@@ -224,7 +224,7 @@
       				</c:if>
      				<c:if test = "${transaction.action == 'D'}">
 						<tr class="success">
-						<td>${transaction.account_number} </td>
+						<td>${transaction.accountNumber} </td>
 							<td>${transaction.date}</td>
 							    <c:if test = "${transaction.action == 'W'}">
 									<td>Withdraw</td>	

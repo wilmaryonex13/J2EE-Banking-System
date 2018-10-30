@@ -24,7 +24,7 @@ public class TransactionService {
 	public void withdrawTransaction(String accountNumber, int amount, AccountManager account, int previousBalance, int newBalance) {
 		   
 		   Transaction newTransaction = new Transaction();
-		   newTransaction.setAccount_number(account.getAccountNumber());
+		   newTransaction.setAccountNumber(account.getAccountNumber());
 		   newTransaction.setDate(LocalDateTime.now().toString());
 		   newTransaction.setAction("W");
 		   newTransaction.setAmount(amount);
@@ -36,7 +36,7 @@ public class TransactionService {
 	public void depositTransaction(String accountNumber, int amount, AccountManager account, int previousBalance, int newBalance) {
 			   
 		   Transaction newTransaction = new Transaction();
-		   newTransaction.setAccount_number(account.getAccountNumber());
+		   newTransaction.setAccountNumber(account.getAccountNumber());
 		   newTransaction.setDate(LocalDateTime.now().toString());
 		   newTransaction.setAction("D");
 		   newTransaction.setAmount(amount);
