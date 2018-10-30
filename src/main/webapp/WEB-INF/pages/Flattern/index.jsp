@@ -66,7 +66,7 @@
                 <nav>
                   <ul class="nav topnav">
                     <li>
-                      <a href="index"><strong>HOME</strong></a>
+                      <a href="index"><strong>HELLO GIT HOME</strong></a>
                     </li>
   					<li>
                       <a href="userManager"><strong>USER MANAGER</strong></a>
