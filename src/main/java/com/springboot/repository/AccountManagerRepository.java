@@ -12,4 +12,5 @@ public interface AccountManagerRepository extends CrudRepository<AccountManager,
 	public List<AccountManager> findByAccountNumberContaining(String accountNumber);
 	public List<AccountManager> findByUserId(int userId);
 	public AccountManager findByAccountNumber(String accountNumber);
+	public List<AccountManager> findAllByOrderByAccountNumberAsc();
 }

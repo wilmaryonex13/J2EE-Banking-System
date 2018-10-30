@@ -19,6 +19,11 @@ public class AccountManagerService {
 		return bankAccountList;
 	}
 	
+	public List<AccountManager> getBankAccountListOrderByAccountNumber(){
+		List<AccountManager> bankAccountList = (List<AccountManager>) accountManagerRepository.findAllByOrderByAccountNumberAsc();
+		return bankAccountList;
+	}
+	
 	public List<AccountManager> getBankAccountListSearch(String accountNumber) {
 		List<AccountManager> bankAccountList = accountManagerRepository.findByAccountNumberContaining(accountNumber);
 		return bankAccountList;

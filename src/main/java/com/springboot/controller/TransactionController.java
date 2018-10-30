@@ -34,7 +34,7 @@ public class TransactionController {
 		map.addAttribute("Transactions", transactions);
 		
 		/* OPTION */
-		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+		List<AccountManager> bankAccountList = accountManagerService.getBankAccountListOrderByAccountNumber();
 		
 		/* TRANSIENT */
 		for(AccountManager bankAccount:bankAccountList){
@@ -75,7 +75,7 @@ public class TransactionController {
 			map.addAttribute("Transactions", transactions);
 			
 			/* OPTION */
-			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+			List<AccountManager> bankAccountList = accountManagerService.getBankAccountListOrderByAccountNumber();
 			
 			/* TRANSIENT */
 			for(AccountManager bankAccount:bankAccountList){
@@ -102,7 +102,7 @@ public class TransactionController {
 		map.addAttribute("Transactions", transactions);
 		
 		/* OPTION */
-		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+		List<AccountManager> bankAccountList = accountManagerService.getBankAccountListOrderByAccountNumber();
 		map.addAttribute("bankAccountList",bankAccountList);
 		
 		/* TRANSIENT */
@@ -151,7 +151,7 @@ public class TransactionController {
 		map.addAttribute("Transactions", transactions);
 		
 		/* OPTION */
-		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+		List<AccountManager> bankAccountList = accountManagerService.getBankAccountListOrderByAccountNumber();
 		
 		/* TRANSIENT */
 		for(AccountManager bankAccount:bankAccountList){
@@ -172,7 +172,7 @@ public class TransactionController {
 		map.addAttribute("Transactions", transactions);
 		
 		/* OPTION */
-		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+		List<AccountManager> bankAccountList = accountManagerService.getBankAccountListOrderByAccountNumber();
 		
 		/* TRANSIENT */
 		for(AccountManager bankAccount:bankAccountList){
