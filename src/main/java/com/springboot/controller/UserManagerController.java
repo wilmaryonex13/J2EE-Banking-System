@@ -131,27 +131,4 @@ public class UserManagerController {
 		
 		return "userManager";
 	}
-	
-	@RequestMapping(params="buttonUpdate", value="/userManager", method = RequestMethod.POST)
-	public String userAccountUpdate(HttpServletRequest request, Model map) {
-		
-		/* UPDATE */
-		UserManager temp = new UserManager();
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		int age = Integer.parseInt(request.getParameter("age"));
-		String emailAddress = request.getParameter("emailAddress");
-		temp.setFirstName(firstName);
-		temp.setLastName(lastName);
-		temp.setAge(age);
-		temp.setEmailAddress(emailAddress);
-		userManagerService.addAccount(temp);
-		
-		/* LIST */
-		List<UserManager> userAccountList = userManagerService.getUserAccountList();
-		
-		map.addAttribute("userAccountList",userAccountList);
-		
-		return "userManager";
-	}
 }
