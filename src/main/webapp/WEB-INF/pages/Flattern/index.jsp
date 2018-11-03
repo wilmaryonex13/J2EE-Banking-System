@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Flattern - Flat and trendy bootstrap site template</title>
+  <title>Alliance Bank</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -93,11 +93,11 @@
       <div id="nivo-slider">
         <div class="nivo-slider">
           <!-- Slide #1 image -->
-          <img src="img/slides/nivo/bg-1.jpg" alt="" title="#caption-1" />
+          <img src="img/slides/nivo/careers_bg.jpg" alt="" title="#caption-1" />
           <!-- Slide #2 image -->
-          <img src="img/slides/nivo/bg-2.jpg" alt="" title="#caption-2" />
+          <img src="img/slides/nivo/hero_company.jpg" alt="" title="#caption-2" />
           <!-- Slide #3 image -->
-          <img src="img/slides/nivo/bg-3.jpg" alt="" title="#caption-3" />
+          <img src="img/slides/nivo/Careers_image_1280_500.jpg" alt="" title="#caption-3" />
         </div>
         <div class="container">
           <div class="row">
@@ -105,9 +105,9 @@
               <!-- Slide #1 caption -->
               <div class="nivo-caption" id="caption-1">
                 <div>
-                  <h2>Awesome <strong>features</strong></h2>
+                  <h2><strong>Capital Raising and Financing</strong></h2>
                   <p>
-                    Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.
+                    We help our clients find the perfect financing solutions to optimize their balance sheets. Our services range from investment banking and advisory services to corporate, structured and project finance that address both industry and client needs.
                   </p>
                   <a href="#" class="btn btn-theme">Read More</a>
                 </div>
@@ -115,20 +115,20 @@
               <!-- Slide #2 caption -->
               <div class="nivo-caption" id="caption-2">
                 <div>
-                  <h2>Fully <strong>responsive</strong></h2>
+                  <h2><strong>Working Capital Efficiency</strong></h2>
                   <p>
-                    Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.
-                  </p>
+					We combine leading treasury and cash management solutions with trust and custody services to help our clients optimize cash flows and liquidity, find alternative sources of finance, and build a competitive financial structure.
+				  </p>
                   <a href="#" class="btn btn-theme">Read More</a>
                 </div>
               </div>
               <!-- Slide #3 caption -->
               <div class="nivo-caption" id="caption-3">
                 <div>
-                  <h2>Very <strong>customizable</strong></h2>
+                  <h2><strong>Industry Sectors and Advisory</strong></h2>
                   <p>
-                    Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.
-                  </p>
+                    Our analysts, economists and strategists provide timely, in–depth analysis of companies, industries, markets and economies, helping our clients craft sector–specific solutions for effective business and financial strategies.
+				  </p>
                   <a href="#" class="btn btn-theme">Read More</a>
                 </div>
               </div>
@@ -144,10 +144,10 @@
           <div class="span12">
             <div class="big-cta">
               <div class="cta-text">
-                <h3>We've created more than <span class="highlight"><strong>5000 websites</strong></span> this year!</h3>
+                <h3><span class="highlight"><strong>Bank easy. Bank secure.  Bank-on-the-go with Alliance Bank.</strong></span></h3>
               </div>
               <div class="cta floatright">
-                <a class="btn btn-large btn-theme btn-rounded" href="#">Request a quote</a>
+                <a class="btn btn-large btn-theme btn-rounded" href="#">About us</a>
               </div>
             </div>
           </div>
@@ -162,13 +162,9 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-briefcase icon-circled icon-64 active"></i>
+                    <img alt="Online Banking" src="img/Online Banking-thumb.jpg">
                   </div>
                   <div class="text">
-                    <h6>Corporate business</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
                     <a href="#">Learn more</a>
                   </div>
                 </div>
@@ -176,13 +172,9 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-desktop icon-circled icon-64 active"></i>
+                    <img alt="Mobile Banking" src="img/Mobile Banking-thumb.jpg">
                   </div>
                   <div class="text">
-                    <h6>Responsive theme</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
                     <a href="#">Learn more</a>
                   </div>
                 </div>
@@ -190,13 +182,9 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-beaker icon-circled icon-64 active"></i>
+                    <img alt="Phone Banking" src="img/Phone Banking-thumb.jpg">
                   </div>
                   <div class="text">
-                    <h6>Coded carefully</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
                     <a href="#">Learn more</a>
                   </div>
                 </div>
@@ -204,13 +192,9 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-coffee icon-circled icon-64 active"></i>
+                    <img alt="ATM Banking" src="img/ATM Banking-thumb.jpg">
                   </div>
                   <div class="text">
-                    <h6>Sit and enjoy</h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                    </p>
                     <a href="#">Learn more</a>
                   </div>
                 </div>
@@ -229,96 +213,52 @@
         <!-- Portfolio Projects -->
         <div class="row">
           <div class="span12">
-            <h4 class="heading">Some of recent <strong>works</strong></h4>
+            <h4 class="heading"><strong>About Alliance Bank</strong></h4>
             <div class="row">
               <section id="projects">
                 <ul id="thumbs" class="portfolio">
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="img/works/full/image-01-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Capital Raising & Financing" href="img/works/full/capital_raising.jpg">
 						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
+						<span class="overlay-img-thumb">Capital Raising & Financing</span>
 						</a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="img/works/thumbs/capital_raising.jpg" alt="">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="img/works/full/image-02-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Growth Strategy" href="img/works/full/growth_strategy.jpg">
 						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
+						<span class="overlay-img-thumb">Growth Strategy</span>
 						</a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-02.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="img/works/thumbs/growth_strategy.jpg" alt="">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-03-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Working Capital Efficiency" href="img/works/full/working_capital_efficiency.jpg">
 						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
+						<span class="overlay-img-thumb">Working Capital Efficiency</span>
 						</a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="img/works/thumbs/working_capital_efficiency.jpg" alt="">
                   </li>
                   <!-- End Item Project -->
                   <!-- Item Project and Filter Name -->
                   <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
                     <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-04-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Financial Education" href="img/works/full/FinancialEducation.jpg">
 						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
+						<span class="overlay-img-thumb">Financial Education</span>
 						</a>
                     <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-04.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="img/works/full/image-05-full.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-05.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-5" data-type="icon">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="img/works/full/image-06-full.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-06.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="img/works/full/image-07-full.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-07.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                  </li>
-                  <!-- End Item Project -->
-                  <!-- Item Project and Filter Name -->
-                  <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="img/works/full/image-08-full.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb font-icon-plus"></span>
-						</a>
-                    <!-- Thumb Image and Description -->
-                    <img src="img/works/thumbs/image-08.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img src="img/works/thumbs/FinancialEducation.jpg" alt="">
                   </li>
                   <!-- End Item Project -->
                 </ul>
@@ -336,71 +276,6 @@
         </div>
         <!-- end divider -->
         <div class="row">
-          <div class="span12">
-            <h4>Very satisfied <strong>clients</strong></h4>
-            <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client1.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client2.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client3.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client4.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client5.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client6.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client1.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client2.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client3.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client4.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client5.png" class="client-logo" alt="" />
-					</a>
-              </li>
-              <li>
-                <a href="#">
-					<img src="img/dummies/clients/client6.png" class="client-logo" alt="" />
-					</a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
@@ -423,21 +298,21 @@
         <div class="row">
           <div class="span3">
             <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
+              <h5 class="widgetheading">Alliance Financial Group, Inc.</h5>
               <ul class="link-list">
-                <li><a href="#">About our company</a></li>
-                <li><a href="#">Our services</a></li>
-                <li><a href="#">Meet our team</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Disclosure Policy</a></li>
               </ul>
             </div>
           </div>
           <div class="span3">
             <div class="widget">
-              <h5 class="widgetheading">Important stuff</h5>
+              <h5 class="widgetheading">Group Companies</h5>
               <ul class="link-list">
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Career center</a></li>
+                <li><a href="#">Alliance Financial Group</a></li>
+                <li><a href="#">Alliance Trust & Banking</a></li>
+                <li><a href="#">Alliance Securities</a></li>
               </ul>
             </div>
           </div>
