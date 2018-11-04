@@ -334,12 +334,13 @@
               <h5 class="widgetheading">Get in touch with us</h5>
               <address>
 								<strong>Alliance Bank</strong><br>
-								 Jamestown Subdivision San Roque, Talisay City, Cebu<br>
-								 6045 Philippines
+								 16th Floor, Buildcomm Center
+								 Sumilon Road, Cebu Business Park
+								 Cebu City 6000, Philippines
 			  </address>
               <p>
-                <i class="icon-phone"></i> (032) 273-0468 <br>
-                <i class="icon-envelope-alt"></i> alviolasurveying@gmail.com
+                <i class="icon-phone"></i> (032) 234-5678 <br>
+                <i class="icon-envelope-alt"></i> alliancebank@gmail.com
               </p>
             </div>
           </div>

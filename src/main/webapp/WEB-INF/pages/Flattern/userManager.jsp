@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Flattern - Flat and trendy bootstrap site template</title>
+  <title>Alliance Bank</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="" />
   <meta name="author" content="" />
@@ -210,21 +210,21 @@
         <div class="row">
           <div class="span3">
             <div class="widget">
-              <h5 class="widgetheading">Browse pages</h5>
+              <h5 class="widgetheading">Alliance Financial Group, Inc.</h5>
               <ul class="link-list">
-                <li><a href="#">About our company</a></li>
-                <li><a href="#">Our services</a></li>
-                <li><a href="#">Meet our team</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Disclosure Policy</a></li>
               </ul>
             </div>
           </div>
           <div class="span3">
             <div class="widget">
-              <h5 class="widgetheading">Important stuff</h5>
+              <h5 class="widgetheading">Group Companies</h5>
               <ul class="link-list">
-                <li><a href="#">Terms and conditions</a></li>
-                <li><a href="#">Privacy policy</a></li>
-                <li><a href="#">Career center</a></li>
+                <li><a href="#">Alliance Financial Group</a></li>
+                <li><a href="#">Alliance Trust & Banking</a></li>
+                <li><a href="#">Alliance Securities</a></li>
               </ul>
             </div>
           </div>
@@ -246,12 +246,13 @@
               <h5 class="widgetheading">Get in touch with us</h5>
               <address>
 								<strong>Alliance Bank</strong><br>
-								 Jamestown Subdivision San Roque, Talisay City, Cebu<br>
-								 6045 Philippines
+								 16th Floor, Buildcomm Center
+								 Sumilon Road, Cebu Business Park
+								 Cebu City 6000, Philippines
 			  </address>
               <p>
-                <i class="icon-phone"></i> (032) 273-0468 <br>
-                <i class="icon-envelope-alt"></i> alviolasurveying@gmail.com
+                <i class="icon-phone"></i> (032) 234-5678 <br>
+                <i class="icon-envelope-alt"></i> alliancebank@gmail.com
               </p>
             </div>
           </div>
