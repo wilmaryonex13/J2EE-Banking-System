@@ -25,6 +25,9 @@
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
   <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
   <link rel="shortcut icon" href="ico/favicon.png" />
+  <script type = "text/javascript" src="js/jspdf.min.js"></script>
+  <script type = "text/javascript" src="js/html2canvas.svg.js"></script>
+  <script type = "text/javascript" src="js/jspdf.plugin.autotable.js"></script>
 
   <!-- =======================================================
     Theme Name: Flattern
@@ -184,9 +187,20 @@
             <br>
             <br>
           </div>
+          <script>
+			  function genPDF(){
+
+			   var doc = new jsPDF('p', 'pt','a4');
+
+			   var res = doc.autoTableHtmlToJson(document.getElementById("transactionsTable"));
+			   doc.autoTable(res.columns, res.data,{styles: {cellPadding: 1, fontSize: 9}, theme: 'alliance'});
+
+			   doc.save("table.pdf");
+			   }
+    	  </script>
           <div class="span11">
-            <table class="table">
-              <thead>
+            <table class="table" id="transactionsTable">
+              <thead id="headings">
                 <tr>
                   <th>
                     Account Number
@@ -211,7 +225,7 @@
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="testdiv">
 				<c:forEach items = "${Transactions}" var="transaction">
 					<c:if test = "${transaction.action == 'W'}">
 						<tr class = "warning">
@@ -250,6 +264,7 @@
             </table>
           	<button class="btn btn-square btn-brown" href="#Withdraw" data-toggle="modal">Withdraw</button>
           	<button class="btn btn-square btn-brown" href="#Deposit" data-toggle="modal">Deposit</button>
+          	<button class="btn btn-square btn-brown" onclick="genPDF()">Download PDF</button>
             <br>
             <br>
             <br>

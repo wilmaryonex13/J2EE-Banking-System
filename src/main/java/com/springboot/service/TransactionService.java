@@ -17,7 +17,7 @@ public class TransactionService {
 	private TransactionRepository transactionRepository;
 
 	public List<Transaction> getAllTransactions(){
-		List<Transaction> transactions = (List<Transaction>) transactionRepository.findAll();
+		List<Transaction> transactions = (List<Transaction>) transactionRepository.findAllByOrderByDateDesc();
 		return transactions;
 	} 
 	
