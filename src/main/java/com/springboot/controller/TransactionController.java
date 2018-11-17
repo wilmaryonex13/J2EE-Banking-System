@@ -54,64 +54,29 @@ public class TransactionController {
 		
 		AccountManager account = accountManagerService.getAccountByAccountNumber(accountNumber);
 		
-		/* TRANSIENT */
+		//TRANSIENT
 		account.setUser(userManagerService.getUserNameById(account.getUserId()));
 		
-//		if(account == null) {
-//			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
-//			
-//			List<Transaction> transactions = transactionService.getAllTransactions();
-//			map.addAttribute("Transactions", transactions);
-//			
-//			/* OPTION */
-//			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
-//			map.addAttribute("bankAccountList",bankAccountList);
-//			
-//			return "transactions";
-//		}
+		boolean result = transactionService.withdrawTransaction(amount, account);
 		
-		//Withdrawal sequence
-		if(account.getBalance() < amount){
-			map.addAttribute("alert","onload=\"alert('Your balance is not enough for this transaction!')\"");
-			
-			List<Transaction> transactions = transactionService.getAllTransactions();
-			map.addAttribute("Transactions", transactions);
-			
-			/* OPTION */
-			List<AccountManager> bankAccountList = accountManagerService.getBankAccountListOrderByAccountNumber();
-			
-			/* TRANSIENT */
-			for(AccountManager bankAccount:bankAccountList){
-				bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
-			}
-			
-			map.addAttribute("bankAccountList",bankAccountList);
-			
-			return "transactions";
+		if(result == true) {
+			map.addAttribute("alert","onload=\"alert('Withdrawal successful!')\"");
 		}else {
-		   int previousBalance = account.getBalance();
-		   int newBalance = account.getBalance()-amount;
-		   account.setBalance(newBalance);
-		   
-		   //Update account information
-		   accountManagerService.updateAccount(account);
-
-		   transactionService.withdrawTransaction(amount, account, previousBalance, newBalance);
+			map.addAttribute("alert","onload=\"alert('Your balance is not enough for this transaction!')\"");
 		}
-		
-		map.addAttribute("alert","onload=\"alert('Withdrawal successful!')\"");
 		
 		List<Transaction> transactions = transactionService.getAllTransactions();
 		map.addAttribute("Transactions", transactions);
 		
 		/* OPTION */
 		List<AccountManager> bankAccountList = accountManagerService.getBankAccountListOrderByAccountNumber();
-		map.addAttribute("bankAccountList",bankAccountList);
 		
 		/* TRANSIENT */
 		for(AccountManager bankAccount:bankAccountList){
 			bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
 		}
+		
+		map.addAttribute("bankAccountList",bankAccountList);
 		
 		return "transactions";
 		
@@ -128,28 +93,10 @@ public class TransactionController {
 		/* TRANSIENT */
 		account.setUser(userManagerService.getUserNameById(account.getUserId()));
 		
-//		if(account == null) {
-//			map.addAttribute("alert","onload=\"alert('Invalid account number!')\"");
-//			
-//			List<Transaction> transactions = transactionService.getAllTransactions();
-//			map.addAttribute("Transactions", transactions);
-//			
-//			/* OPTION */
-//			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
-//			map.addAttribute("bankAccountList",bankAccountList);
-//			
-//			return "transactions";
-//		}
-			
-		//Deposit sequence
-		   int previousBalance = account.getBalance();
-		   int newBalance = account.getBalance()+amount;
-		   account.setBalance(newBalance);
+		transactionService.depositTransaction(amount, account);
 			   
-		   //Update account information
-		   accountManagerService.updateAccount(account);
-		
-		transactionService.depositTransaction(amount, account, previousBalance, newBalance);
+		//Update account information
+		accountManagerService.updateAccount(account);
 		
 		map.addAttribute("alert","onload=\"alert('Deposit successful!')\"");
 		
