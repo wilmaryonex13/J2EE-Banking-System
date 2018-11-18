@@ -10,8 +10,8 @@ import com.springboot.entities.Transaction;
 @Repository
 public interface TransactionRepository extends CrudRepository<Transaction, Integer>{
 	public List<Transaction> findAllByOrderByDateDesc();
-	public List<Transaction> findByAccountNumberContaining(String accountNumber);
-	public List<Transaction> findByFirstNameContainingOrLastNameContaining(String firstName, String lastName);
-	public List<Transaction> findByAccountNumberContainingAndFirstNameContainingOrLastNameContaining(
+	public List<Transaction> findByAccountNumberContainingOrderByDateDesc(String accountNumber);
+	public List<Transaction> findByFirstNameContainingOrLastNameContainingOrderByDateDesc(String firstName, String lastName);
+	public List<Transaction> findByAccountNumberContainingAndFirstNameContainingOrLastNameContainingOrderByDateDesc(
 			String accountNumber, String firstName, String lastName);
 }

@@ -83,19 +83,19 @@ public class TransactionService {
 	
 	public List<Transaction> searchByAccountNumber(String accountNumber) {
 		
-		List<Transaction> transactions = transactionRepository.findByAccountNumberContaining(accountNumber);
+		List<Transaction> transactions = transactionRepository.findByAccountNumberContainingOrderByDateDesc(accountNumber);
 		return transactions;
 	}
 	
 	public List<Transaction> searchByFirstNameOrLastName(String firstName, String lastName) {
 		
-		List<Transaction> transactions = transactionRepository.findByFirstNameContainingOrLastNameContaining(firstName, lastName);
+		List<Transaction> transactions = transactionRepository.findByFirstNameContainingOrLastNameContainingOrderByDateDesc(firstName, lastName);
 		return transactions;
 	}
 	
 	public List<Transaction> searchByAccountNumberAndFirstNameOrLastName(String accountNumber, String firstName, String lastName) {
 		
-		List<Transaction> transactions = transactionRepository.findByAccountNumberContainingAndFirstNameContainingOrLastNameContaining(accountNumber,firstName, lastName);
+		List<Transaction> transactions = transactionRepository.findByAccountNumberContainingAndFirstNameContainingOrLastNameContainingOrderByDateDesc(accountNumber,firstName, lastName);
 		return transactions;
 	}
 	

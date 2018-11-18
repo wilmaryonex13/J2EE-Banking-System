@@ -127,7 +127,7 @@
                 <div>
                   <h2><strong>Industry Sectors and Advisory</strong></h2>
                   <p>
-                    Our analysts, economists and strategists provide timely, in–depth analysis of companies, industries, markets and economies, helping our clients craft sector–specific solutions for effective business and financial strategies.
+                    Our analysts, economists and strategists provide timely, in-depth analysis of companies, industries, markets and economies, helping our clients craft sector-specific solutions for effective business and financial strategies.
 				  </p>
                   <a href="#" class="btn btn-theme">Read More</a>
                 </div>
