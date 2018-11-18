@@ -60,11 +60,17 @@ public class AccountManagerController {
 		}
 		
 		/* LIST NAME SEARCH */
+		String inputSearch2 = inputSearch1;
+		if(inputSearch1.contains(" ")) {
+			int spaceIndex = inputSearch1.lastIndexOf(" ");
+			inputSearch2 = inputSearch2.substring(spaceIndex+1);
+			System.out.println(inputSearch2);
+		}
 		if(inputSearch1 != "") {
 			List<AccountManager> tempBankAccountList = new ArrayList<AccountManager>();
 			for(AccountManager bankAccount:bankAccountList) {
 				if(bankAccount.getUser().getFirstName().toLowerCase().contains(inputSearch1.toLowerCase()) == true ||
-				    bankAccount.getUser().getLastName().toLowerCase().contains(inputSearch1.toLowerCase()) == true) {
+				    bankAccount.getUser().getLastName().toLowerCase().contains(inputSearch2.toLowerCase()) == true) {
 					tempBankAccountList.add(bankAccount);
 				}
 			}

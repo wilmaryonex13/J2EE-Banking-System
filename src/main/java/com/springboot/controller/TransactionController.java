@@ -124,14 +124,21 @@ public class TransactionController {
 		
 		List<Transaction> transactions = null;
 		
+		String inputSearch2 = inputSearch1;
+		if(inputSearch1.contains(" ")) {
+			int spaceIndex = inputSearch1.lastIndexOf(" ");
+			inputSearch2 = inputSearch2.substring(spaceIndex+1);
+			System.out.println(inputSearch2);
+		}
+		
 		if(!inputSearch.equals("") && !inputSearch1.equals("")) {
-			transactions = transactionService.searchByAccountNumberAndFirstNameOrLastName(inputSearch,inputSearch1,inputSearch1);
+			transactions = transactionService.searchByAccountNumberAndFirstNameOrLastName(inputSearch,inputSearch1,inputSearch2);
 		}
 		else if(!inputSearch.equals("") && inputSearch1.equals("")) {
 			transactions = transactionService.searchByAccountNumber(inputSearch);
 		}
 		else if(inputSearch.equals("") && !inputSearch1.equals("")) {
-			transactions = transactionService.searchByFirstNameOrLastName(inputSearch1,inputSearch1);
+			transactions = transactionService.searchByFirstNameOrLastName(inputSearch1,inputSearch2);
 		}
 		else {
 			transactions = transactionService.getAllTransactions();
