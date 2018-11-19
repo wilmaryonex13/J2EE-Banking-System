@@ -89,35 +89,58 @@ public class AccountManagerController {
 	@RequestMapping(params="buttonAdd", value="/accountManager", method = RequestMethod.POST)
 	public String userAccountAdd(HttpServletRequest request, Model map) {
 		
-		/* ADD */
-		AccountManager temp = new AccountManager();
-		int userId = Integer.parseInt(request.getParameter("option"));
 		String accountNumber = request.getParameter("accountNumber");
-		int balance = Integer.parseInt(request.getParameter("balance"));
-		int pinNumber = Integer.parseInt(request.getParameter("pin"));
-		temp.setUserId(userId);
-		temp.setAccountNumber(accountNumber);
-		temp.setBalance(balance);
-		temp.setPinNumber(pinNumber);
-		accountManagerService.addAccount(temp);
-		
-		/* LIST */
-		List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
-		
-		/* TRANSIENT */
-		for(AccountManager bankAccount:bankAccountList){
-			bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+		if(accountManagerService.getAccountByAccountNumber(accountNumber) != null) {
+			
+			/* LIST */
+			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+			
+			/* TRANSIENT */
+			for(AccountManager bankAccount:bankAccountList){
+				bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+			}
+			
+			/* OPTION */
+			List<UserManager> userAccountList = userManagerService.getUserAccountListOrderByNameAsc();
+			
+			map.addAttribute("bankAccountList",bankAccountList);
+			map.addAttribute("userAccountList",userAccountList);
+			
+			map.addAttribute("alert","onload=\"alert('Account number is already in used!\\nPlease choose another one.')\"");
+			
+			return "accountManager";
 		}
+		else {
 		
-		/* OPTION */
-		List<UserManager> userAccountList = userManagerService.getUserAccountListOrderByNameAsc();
-		
-		map.addAttribute("bankAccountList",bankAccountList);
-		map.addAttribute("userAccountList",userAccountList);
-		
-		map.addAttribute("alert","onload=\"alert('Add successful!')\"");
-		
-		return "accountManager";
+			/* ADD */
+			AccountManager temp = new AccountManager();
+			int userId = Integer.parseInt(request.getParameter("option"));
+			int balance = Integer.parseInt(request.getParameter("balance"));
+			int pinNumber = Integer.parseInt(request.getParameter("pin"));
+			temp.setUserId(userId);
+			temp.setAccountNumber(accountNumber);
+			temp.setBalance(balance);
+			temp.setPinNumber(pinNumber);
+			accountManagerService.addAccount(temp);
+			
+			/* LIST */
+			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
+			
+			/* TRANSIENT */
+			for(AccountManager bankAccount:bankAccountList){
+				bankAccount.setUser(userManagerService.getUserNameById(bankAccount.getUserId()));
+			}
+			
+			/* OPTION */
+			List<UserManager> userAccountList = userManagerService.getUserAccountListOrderByNameAsc();
+			
+			map.addAttribute("bankAccountList",bankAccountList);
+			map.addAttribute("userAccountList",userAccountList);
+			
+			map.addAttribute("alert","onload=\"alert('Add successful!')\"");
+			
+			return "accountManager";
+		}
 	}
 	
 	@RequestMapping(params="buttonDelete", value="/accountManager", method = RequestMethod.POST)
@@ -141,7 +164,7 @@ public class AccountManagerController {
 				}
 			}
 			else {
-				map.addAttribute("alert","onload=\"alert('Delete Error!\\nAvailable Balance Is Not Zero.')\"");
+				map.addAttribute("alert","onload=\"alert('Unable to delete!\\nAvailable account balance is not zero.')\"");
 				
 				/* LIST */
 				List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();
@@ -161,7 +184,7 @@ public class AccountManagerController {
 			}
 		}
 		else {
-			map.addAttribute("alert","onload=\"alert('Delete Error!\\nNo Selection.')\"");
+			map.addAttribute("alert","onload=\"alert('Unable to delete!\\nNo selection.')\"");
 			
 			/* LIST */
 			List<AccountManager> bankAccountList = accountManagerService.getBankAccountList();

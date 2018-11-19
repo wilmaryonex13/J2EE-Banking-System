@@ -82,9 +82,9 @@
                     </div>
                   </div>
                   <div class="control-group">
-                    <label class="control-label" for="pinNumber">Enter PIN number</label>
+                    <label class="control-label" for="pinNumber">Enter PIN Number</label>
                     <div class="controls">
-                      <input type="number" id="pinNumber" placeholder="Pin Number" name="pin" required>
+                      <input type="password" pattern="[0-9]*" minlength="4" maxlength="4" title="Please input numerical values only." inputmode="numeric" id="pinNumber" placeholder="Enter PIN Number" name="pin" required>
                     </div>
                   </div>
                   <div class="control-group">
@@ -122,9 +122,9 @@
                     </div>
                   </div>
                   <div class="control-group">
-                    <label class="control-label" for="pinNumber">Enter PIN number</label>
+                    <label class="control-label" for="pinNumber">Enter PIN Number</label>
                     <div class="controls">
-                      <input type="number" id="pinNumber" placeholder="Pin Number" name="pin" required>
+                      <input type="password" pattern="[0-9]*" minlength="4" maxlength="4" title="Please input numerical values only." inputmode="numeric" id="pinNumber" placeholder="Enter PIN Number" name="pin" required>
                     </div>
                   </div>
                   <div class="control-group">

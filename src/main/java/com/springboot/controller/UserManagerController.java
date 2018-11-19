@@ -41,7 +41,13 @@ public class UserManagerController {
 		String inputSearch = request.getParameter("inputSearch");
 		
 		/* LIST SEARCH */
-		List<UserManager> userAccountList = userManagerService.getUserAccountListSearch(inputSearch, inputSearch);
+		String inputSearch1 = inputSearch;
+		if(inputSearch.contains(" ")) {
+			int spaceIndex = inputSearch.lastIndexOf(" ");
+			inputSearch1 = inputSearch1.substring(spaceIndex+1);
+			System.out.println(inputSearch1);
+		}
+		List<UserManager> userAccountList = userManagerService.getUserAccountListSearch(inputSearch, inputSearch1);
 		
 		map.addAttribute("userAccountList",userAccountList);
 		
@@ -101,7 +107,7 @@ public class UserManagerController {
 				}
 			}
 			else {
-				map.addAttribute("alert","onload=\"alert('Delete Error!\\nAvailable Balance Is Not Zero.')\"");
+				map.addAttribute("alert","onload=\"alert('Unable to delete!\\nAvailable account balance is not zero.')\"");
 				
 				/* LIST */
 				List<UserManager> userAccountList = userManagerService.getUserAccountList();
@@ -112,7 +118,7 @@ public class UserManagerController {
 			}
 		}
 		else {
-			map.addAttribute("alert","onload=\"alert('Delete Error!\\nNo Selection.')\"");
+			map.addAttribute("alert","onload=\"alert('Unable to delete!\\nNo selection.')\"");
 			
 			/* LIST */
 			List<UserManager> userAccountList = userManagerService.getUserAccountList();

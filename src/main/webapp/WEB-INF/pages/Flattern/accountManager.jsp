@@ -85,9 +85,9 @@
                     </div>
                   </div>      
                   <div class="control-group">
-                    <label class="control-label" for="inputText2">Balance</label>
+                    <label class="control-label" for="inputText2">PIN Number</label>
                     <div class="controls">
-                      <input type="number" id="inputText2" placeholder="Pin Number" name="pin" required>
+                      <input type="text" pattern="[0-9]*" minlength="4" maxlength="4" title="Please input numerical values only." id="inputText2" placeholder="PIN Number" name="pin" required>
                     </div>
                   </div>                               
                   <div class="control-group">
