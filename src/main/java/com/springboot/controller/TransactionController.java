@@ -51,18 +51,21 @@ public class TransactionController {
 		
 		String accountNumber = request.getParameter("option");
 		int amount = Integer.parseInt(request.getParameter("amount"));
+		int pinNumber = Integer.parseInt(request.getParameter("pin"));
 		
 		AccountManager account = accountManagerService.getAccountByAccountNumber(accountNumber);
 		
 		//TRANSIENT
 		account.setUser(userManagerService.getUserNameById(account.getUserId()));
 		
-		boolean result = transactionService.withdrawTransaction(amount, account);
+		String result = transactionService.withdrawTransaction(amount, account, pinNumber);
 		
-		if(result == true) {
+		if(result.equals("Successful")){
 			map.addAttribute("alert","onload=\"alert('Withdrawal successful!')\"");
-		}else {
+		}else if(result.equals("LackingBalance")) {
 			map.addAttribute("alert","onload=\"alert('Your balance is not enough for this transaction!')\"");
+		}else if(result.equals("InvalidPin")) {
+			map.addAttribute("alert","onload=\"alert('Invalid PIN Number!')\"");
 		}
 		
 		List<Transaction> transactions = transactionService.getAllTransactions();
@@ -87,19 +90,23 @@ public class TransactionController {
 		
 		String accountNumber = request.getParameter("option");
 		int amount = Integer.parseInt(request.getParameter("amount"));
+		int pinNumber = Integer.parseInt(request.getParameter("pin"));
 		
 		AccountManager account = accountManagerService.getAccountByAccountNumber(accountNumber);
 		
 		/* TRANSIENT */
 		account.setUser(userManagerService.getUserNameById(account.getUserId()));
 		
-		transactionService.depositTransaction(amount, account);
+		String result = transactionService.depositTransaction(amount, account, pinNumber);
 			   
 		//Update account information
 		accountManagerService.updateAccount(account);
 		
-		map.addAttribute("alert","onload=\"alert('Deposit successful!')\"");
-		
+		if(result.equals("Successful")) {
+			map.addAttribute("alert","onload=\"alert('Deposit successful!')\"");
+		}else if(result.equals("InvalidPin")) {
+			map.addAttribute("alert","onload=\"alert('Invalid PIN Number!')\"");
+		}
 		List<Transaction> transactions = transactionService.getAllTransactions();
 		map.addAttribute("Transactions", transactions);
 		

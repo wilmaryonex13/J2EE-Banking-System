@@ -24,23 +24,27 @@ public class TransactionService {
 		return transactions;
 	} 
 	
-	public boolean withdrawTransaction(int amount, AccountManager account) {
+	public String withdrawTransaction(int amount, AccountManager account, int pinNumber) {
 		
 		int previousBalance = 0;
 		int newBalance = 0;
 		
 		//Withdrawal sequence
+		if(account.getPinNumber() != pinNumber) {
+			return "InvalidPin";
+		}
+		
 		if(account.getBalance() < amount){
-			return false;
+			return "LackingBalance";
 		}
-		else{
-		   previousBalance = account.getBalance();
-		   newBalance = previousBalance-amount;
-		   account.setBalance(newBalance);
+		
+		previousBalance = account.getBalance();
+		newBalance = previousBalance-amount;
+		account.setBalance(newBalance);
 		   
-		   //Update account information
-		   accountManagerService.updateAccount(account);
-		}
+		//Update account information
+		accountManagerService.updateAccount(account);
+		
 		
 		Transaction newTransaction = new Transaction();
 		newTransaction.setAccountNumber(account.getAccountNumber());
@@ -53,13 +57,17 @@ public class TransactionService {
 		newTransaction.setLastName(account.getUser().getLastName());		   
 		transactionRepository.save(newTransaction);
 		
-		return true;
+		return "Successful";
 	}
 		
-	public void depositTransaction(int amount, AccountManager account) {
+	public String depositTransaction(int amount, AccountManager account, int pinNumber) {
 		
 		int previousBalance = 0;
 		int newBalance = 0;
+		
+		if(account.getPinNumber() != pinNumber) {
+			return "InvalidPin";
+		}
 		
 		previousBalance = account.getBalance();
 		newBalance = previousBalance + amount;
@@ -78,7 +86,8 @@ public class TransactionService {
 		newTransaction.setFirstName(account.getUser().getFirstName());
 		newTransaction.setLastName(account.getUser().getLastName());
 		transactionRepository.save(newTransaction);	
-	
+		
+		return "Successful";
 	}
 	
 	public List<Transaction> searchByAccountNumber(String accountNumber) {

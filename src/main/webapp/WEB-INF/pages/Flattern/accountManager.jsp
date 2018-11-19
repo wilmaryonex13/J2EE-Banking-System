@@ -83,7 +83,13 @@
                     <div class="controls">
                       <input type="number" id="inputText2" placeholder="Balance" name="balance" required>
                     </div>
-                  </div>                                   
+                  </div>      
+                  <div class="control-group">
+                    <label class="control-label" for="inputText2">Balance</label>
+                    <div class="controls">
+                      <input type="number" id="inputText2" placeholder="Pin Number" name="pin" required>
+                    </div>
+                  </div>                               
                   <div class="control-group">
                     <div class="controls">
                       <button type="submit" class="btn" name="buttonAdd">Confirm</button>
@@ -171,6 +177,9 @@
                   <th>
                     Balance
                   </th>
+                  <th>
+                    Pin Number
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -187,6 +196,9 @@
                   </td>
                   <td>
                     ${item.balance}
+                  </td>
+                  <td>
+                    ${item.pinNumber}
                   </td>
                 </tr>
               </c:forEach>

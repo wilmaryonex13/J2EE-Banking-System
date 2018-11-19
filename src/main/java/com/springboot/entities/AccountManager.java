@@ -19,6 +19,7 @@ public class AccountManager implements Serializable{
 	int userId;
 	String accountNumber;
 	int balance;
+	int pinNumber;
 	
 	public int getId() {
 		return id;
@@ -50,5 +51,10 @@ public class AccountManager implements Serializable{
 	public void setUser(UserManager user) {
 		this.user = user;
 	}
-
+	public int getPinNumber() {
+		return pinNumber;
+	}
+	public void setPinNumber(int pinNumber) {
+		this.pinNumber = pinNumber;
+	}
 }

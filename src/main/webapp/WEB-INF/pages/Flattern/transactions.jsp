@@ -82,6 +82,12 @@
                     </div>
                   </div>
                   <div class="control-group">
+                    <label class="control-label" for="pinNumber">Enter PIN number</label>
+                    <div class="controls">
+                      <input type="number" id="pinNumber" placeholder="Pin Number" name="pin" required>
+                    </div>
+                  </div>
+                  <div class="control-group">
                     <div class="controls">
                       <button type="submit" class="btn" name="withdraw">Confirm</button>
                     </div>
@@ -113,6 +119,12 @@
                     <label class="control-label" for="inputAmount">Amount</label>
                     <div class="controls">
                       <input type="number" id="inputAmount" placeholder="Amount" name="amount" required>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="pinNumber">Enter PIN number</label>
+                    <div class="controls">
+                      <input type="number" id="pinNumber" placeholder="Pin Number" name="pin" required>
                     </div>
                   </div>
                   <div class="control-group">

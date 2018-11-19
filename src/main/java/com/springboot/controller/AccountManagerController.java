@@ -94,9 +94,11 @@ public class AccountManagerController {
 		int userId = Integer.parseInt(request.getParameter("option"));
 		String accountNumber = request.getParameter("accountNumber");
 		int balance = Integer.parseInt(request.getParameter("balance"));
+		int pinNumber = Integer.parseInt(request.getParameter("pin"));
 		temp.setUserId(userId);
 		temp.setAccountNumber(accountNumber);
 		temp.setBalance(balance);
+		temp.setPinNumber(pinNumber);
 		accountManagerService.addAccount(temp);
 		
 		/* LIST */
